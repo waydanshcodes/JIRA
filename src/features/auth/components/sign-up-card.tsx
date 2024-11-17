@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { FcGoogle } from "react-icons/fc"
 import { FaGithub } from "react-icons/fa"
 
@@ -5,19 +6,27 @@ import {
     Card,
     CardContent,
     CardHeader,
-    CardTitle
+    CardTitle,
+    CardDescription
 } from "@/components/ui/card"
 import { DottedSeparator } from "@/components/dotted-seperator"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
-export const SignInCard = () => {
+export const SignUpCard = () => {
     return (
         <Card className="w-full h-full md:w-[478px] border-none shadow-none">
             <CardHeader className="flex items-center justify-center text-center p-7">
                 <CardTitle className="text-2xl">
-                    Welcome Back!
+                    Sign Up
                 </CardTitle>
+                <CardDescription>
+                    By signinng up, you agree to our{" "}
+                    <Link href="/privacy">
+                        <span className="text-blue-700">Privacy Policy</span>{" "}
+                    </Link>and{" "}
+                    <Link href="/terms"><span className="text-blue-700">Terms of Service</span></Link>
+                </CardDescription>
             </CardHeader>
             <div className="px-7">
                 <DottedSeparator />
